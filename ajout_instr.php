@@ -12,7 +12,7 @@
 <div class="container">
 
     <!-- On envoie les données au serveur par javascript -->
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" action="ajout_instr_action.php">
 
         Si vous voulez ajoutez un instrument à ce site, remplissez ce formulaire :<br>
 
@@ -26,28 +26,7 @@
         <div class="mb-2">
             Type :
             <span class="error" id="instr_type_error"></span>
-            <div class="form-check">
-                <input class="form-check-input" id="instr_cord" name="instr_type_radio" type="radio" value="instr_cord">
-                <label class="form-check-label" for="instr_cord">
-                    Instrument à  cordes
-                </label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" id="instr_vent" name="instr_type_radio" type="radio" value="instr_vent">
-                <label class="form-check-label" for="instr_vent">
-                    Instrument à vent
-                </label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" id="instr_percu" name="instr_type_radio" type="radio"
-                       value="instr_percu">
-                <label class="form-check-label" for="instr_percu">
-                    Instrument à  percussion
-                </label>
-            </div>
-
+            <div id="instr_type_content"></div>
         </div>
 
         <div class="form-group">
@@ -65,7 +44,7 @@
 
 <?php include_once "inc/javascript_body_inc.php"; ?>
 
-<script src="js/instrument.js" type="text/javascript" ></script>
+<script src="js/instrument.js" type="text/javascript"></script>
 
 </body>
 </html>

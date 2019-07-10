@@ -1,8 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 // Inclus des fichiers de dépendances.
 include_once 'inc/db_connection_inc.php';

@@ -50,7 +50,8 @@ $(function () {
 
 
     // Appeler lors d'un clique sur le bouton Ajouter.
-    $("#submitInstrument").click(function(event){
+    $("#submitInstrument").submit(function (event) {
+        //event.preventDefault();
 
         let instrument = $('#instrumentInput').val();
         let instrumentType =  $('input[name=instr_type_radio]:checked').val();
@@ -95,5 +96,33 @@ $(function () {
         }
 
     });
+
+});
+
+$(function () {
+
+    const success = (array) => {
+        $("#instr_type_content").empty();
+
+        array.forEach(el => {
+            let dom = '<div class="form-check">' +
+                '           <input class="form-check-input" id="instr_cord" name="instr_type_radio" type="radio" value="' + el.id_instr_type + '">' +
+                '           <label class="form-check-label" for="instr_cord">' + el.libelle + '</label>' +
+                '      </div>';
+
+            $("#instr_type_content").append(dom);
+        });
+    }
+
+    const fail = (status, erreur) => {
+
+    }
+
+    let chargerInstrumentType = () => {
+
+        $.get("charger_instrument_type_action.php", success, "json").fail(fail);
+    }
+
+    chargerInstrumentType();
 
 });
