@@ -16,7 +16,7 @@ define('EMAIL_REGEX', '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|("
 $erreurs = [];
 $erreurExists = false;
 
-// Récuperation des données postées dépuis l'écran
+// Récupération des données postées depuis l'écran
 $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $pseudo = $_POST["pseudo"];
@@ -76,7 +76,7 @@ if (!$erreurExists) {
 
     //  Avant l'insertion vérifions s'il existe déjà des enregistrements liés aux clé unique
     //  $nbEmailQuery = "SELECT COUNT(id_utilisateur) as count FROM `utilisateurs` WHERE `email` = '$email'";
-    //  $nbPseudoQuery= "SELECT COUNT(id_utilisateur) AS COUNT FROM `utilisateurs` WHERE `pseudo`= '$pseudo'";
+    //  $nbPseudoQuery= "SELECT COUNT(id_utilisateur) as count FROM `utilisateurs` WHERE `pseudo`= '$pseudo'";
 
     // $nbEmailResult = mysqli_query($con, $nbEmailQuery) or die(mysqli_error($con));
 

@@ -13,26 +13,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="inscription.php">Inscription</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Instruments
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Instruments à cordes</a>
-                    <a class="dropdown-item" href="#">Instruments à vent</a>
-                    <a class="dropdown-item" href="">Instruments à percussion</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href=""></a>
-                </div>
-            </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="instrument.php">Instruments</a>
             </li>
+
+
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
+
     </div>
 </nav>

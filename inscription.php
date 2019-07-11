@@ -12,11 +12,11 @@
       action="inscription_action.php">
     <div class="card w-25 mx-auto">
         <div class="card-body ">
-            <h4 class="card-title text-center my-4">Inscription</h4>
+
 
             <div class="form-row mb-4">
                 <div class="col">
-                    <input type="text" id="nomImput" class="form-control" placeholder="Nom" required>
+                    <input type="text" id="nomInput" class="form-control" placeholder="Nom" required>
                 </div>
                 <div class="col">
                     <input type="text" id="prenomInput" class="form-control" placeholder="Prénom" required>
@@ -43,7 +43,10 @@
 
             <button class="btn btn-primary my-4 btn-block" type="submit">Envoyer</button>
         </div>
+
     </div>
+
+
 
 </form>
 

@@ -20,11 +20,11 @@
             <?php } ?>
 
             <div class="my-4">
-                <input type="text" class="form-control" id="user_input" aria-describedby="emailHelp"
+                <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp"
                        placeholder="Email / Pseudo" required>
             </div>
             <div class="my-4">
-                <input type="password" class="form-control" id="password_input" placeholder="Mot de passe" required>
+                <input type="password" class="form-control" id="passwordInput" placeholder="Mot de passe" required>
             </div>
         </div>
         <div class="mb-2">

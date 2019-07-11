@@ -29,7 +29,7 @@ $(function () {
     const ajouterInstrument = (donnee) => {
 
         /**
-         *  Cette fonction est appelée dans le cas où le serveur repond avec succés.
+         *  Cette fonction est appelée dans le cas où le serveur repond avec succès.
          */
         const success = (reponse) => {
             console.log(reponse);

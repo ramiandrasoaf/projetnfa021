@@ -9,8 +9,8 @@ $utilisateurs = [];
 $_SESSION["login_empty"] = false;
 
 // Recupération des données postées depuis l'écran.
-$username = $_POST["user_input"];
-$login = $_POST["password_input"];
+$username = $_POST["username"];
+$login = $_POST["login"];
 
 
 // Validation des données
