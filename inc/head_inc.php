@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
 <!-- Custom CSS -->
+<link rel="stylesheet" href="css/layout.css" type="text/css">
 <link rel="stylesheet" href="css/footer.css" type="text/css">
 
 
