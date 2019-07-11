@@ -6,6 +6,8 @@ include_once 'inc/db_connection_inc.php';
 
 //Déclaration des variables globales
 $utilisateur = [];
+
+
 // Preparation de la requête
 $query = "SELECT email,password,pseudo  FROM `utilisateurs` WHERE `password`= password_hash('$login') AND (`email`='$username' OR `pseudo`='$username')";
 
