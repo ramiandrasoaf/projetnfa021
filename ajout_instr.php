@@ -26,7 +26,11 @@
         <div class="mb-2">
             Type :
             <span class="error" id="instr_type_error"></span>
-            <div id="instr_type_content"></div>
+            <br id="instr_type_content">
+                <input type="radio" id="1" name="choice">Instrument à cordes </br>
+                <input type="radio" id="2" name="choice">Instrument à vent</br>
+                <input type="radio" id="3" name="choice">Instrument à percussion</br>
+            </div>
         </div>
 
         <div class="form-group">

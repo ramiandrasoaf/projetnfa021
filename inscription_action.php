@@ -43,7 +43,7 @@ if (!isset($pseudo)) {
 }
 
 if (!isset($phone)) {
-    $erreurs["phone"] = "Le numero de téléphone est obligatoire.";
+    $erreurs["phone"] = "Le numéro de téléphone est obligatoire.";
     $erreurExists = true;
 }
 
@@ -63,10 +63,10 @@ if ($confirmPassword !== $password) {
 }
 
 if (!isset($email)) {
-    $erreurs["email"] = "Le e-amil est obligatoire.";
+    $erreurs["email"] = "L'e-mail est obligatoire.";
     $erreurExists = true;
 } else if (!preg_match(EMAIL_REGEX, $email)) {
-    $erreurs["email"] = "Le format de l'e-amil est incorrect. (xxxx@yyyy.zzz)";
+    $erreurs["email"] = "Le format de l'e-mail est incorrect. (xxxx@yyyy.zzz)";
     $erreurExists = true;
 }
 // --Fin validation

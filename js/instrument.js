@@ -123,6 +123,6 @@ $(function () {
         $.get("charger_instrument_type_action.php", success, "json").fail(fail);
     }
 
-    chargerInstrumentType();
+    // chargerInstrumentType();
 
 });

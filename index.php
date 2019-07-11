@@ -10,8 +10,9 @@
     <main>
         <b>Bienvenue dans l'univers de la musique!</b> Approfondissez vos connaissances des instruments de musique,
         partagez-les en ajoutant un <a href="ajout_instr.php">instrument</a> ou des <a
-                href="ajout_info.php">informations</a> sur le sujet, et discutez avec d'autres amateurs en vous
-        <a href="inscription.php">inscrivant</a> au forum musical!
+                href="ajout_info.php">informations</a> sur le sujet en vous
+        <a href="inscription.php">inscrivant</a> sur le site!</br>Si vous avez déjà passé l'étape de l'inscription,
+        connectez-vous <a href="connexion.php">ici</a>.
     </main>
 </div>
 <?php  include_once "inc/footer_inc.php";?>

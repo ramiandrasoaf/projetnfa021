@@ -7,7 +7,8 @@ include_once 'inc/db_connection_inc.php';
 //Déclaration des variables globales
 $instrumentTypes = [];
 
-$query = "SELECT id_instr_type, code, libelle FROM `types_instrument` WHERE 1";
+// Preparation de la requête
+$query = "SELECT id_instr_type, code, libelle FROM `types_instrument` WHERE password=password_hash()";
 
 $result = mysqli_query($con, $query) or die(mysqli_error($con));
 
