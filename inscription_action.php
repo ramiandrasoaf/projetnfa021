@@ -71,6 +71,7 @@ if (!isset($email)) {
 }
 // --Fin validation
 
+print_r("before");
 
 if (!$erreurExists) {
 
@@ -82,6 +83,7 @@ if (!$erreurExists) {
 
 
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    print_r("ok");
 
     // Préparation de la requête sql pour l'enregistrement des données
     $query = "INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `password`, `phone`, `pseudo`) VALUES ('$nom', '$prenom', '$email', '$password_hash', '$phone', '$pseudo')";
@@ -99,5 +101,6 @@ if (!$erreurExists) {
     }
 
 } else {
+    print_r("error");
     echo json_encode(array("error" => array("code" => 500, "value" => $erreurs)), JSON_UNESCAPED_UNICODE);
 }

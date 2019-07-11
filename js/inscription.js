@@ -14,7 +14,7 @@ $(function () {
 
         // Recupération des données
 
-        let nom = $("#nomImput").val();
+        let nom = $("#nomInput").val();
         let prenom = $("#prenomInput").val();
         let pseudo = $("#pseudoInput").val();
         let email = $("#emailInput").val();
@@ -24,6 +24,7 @@ $(function () {
 
         // Défintion des functions de retour d'appel
 
+        //console.log("Sending response", nom, prenom, pseudo,email,password, confirmPassword);
         const success = (reponse) => {
             console.log(reponse);
         }
@@ -53,6 +54,7 @@ $(function () {
                 phone: phone
             }
 
+            console.log("sending", donnee)
             $.post("inscription_action.php", donnee, success, "json").fail(fail);
 
         }

@@ -1,11 +1,11 @@
-<a class="navbar-brand" href="#" style="max-width: 30%;">
+<!--<a class="navbar-brand" href="#" style="max-width: 30%;">
     <img src="img/Logo.png" class="img-fluid">
-</a>
+</a>-->
 </h2><nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.php">Accueil</a>
-    <a class="navbar-brand" href="#" style="max-width: 30%;">
+    <!--<a class="navbar-brand" href="#" style="max-width: 30%;">
         <img src="img/Logo.png" class="img-fluid">
-    </a>
+    </a>-->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
