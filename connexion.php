@@ -7,19 +7,31 @@
 <body>
 
 <?php include_once "inc/header_inc.php"; ?>
-<form id="Formconnexion" class="text-center border border-light p-5" method="post" enctype="multipart/form-data"
+
+<form id="form_connexion" class="text-center p-5" method="post" enctype="multipart/form-data"
       action="connexion_action.php">
-    <div class="card w-25 mx-auto"  >
+    <div class="card w-17 mx-auto">
         <div class="card-body ">
-        <label for="exampleInputEmail">Utilisateur</label>
-        <input type="text" class="form-control" id="exampleInput" aria-describedby="emailHelp" placeholder="Email/pseudo">
+            <h5 class="card-title">Connexion</h5>
+            <?php
+                if(isset($_SESSION["login_empty"])){
+            ?>
+            <div class="text-danger my-2"><small><?= $_SESSION["login_empty"]?> </small> </div>
+            <?php } ?>
+
+            <div class="my-4">
+                <input type="text" class="form-control" id="user_input" aria-describedby="emailHelp"
+                       placeholder="Email / Pseudo" required>
+            </div>
+            <div class="my-4">
+                <input type="password" class="form-control" id="password_input" placeholder="Mot de passe" required>
+            </div>
         </div>
-        <div class="card-body ">
-        <label for="exampleInputPassword1">Mot de passe</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" >
+        <div class="mb-2">
+            <button type="submit" class="btn btn-primary">Se connecter</button>
         </div>
-        <div class="card-body ">
-    <button type="submit" class="btn btn-primary">Se connecter</button>
+        <div class="mb-2">
+            <a href="inscription.php"><small>Créer un nouveau compte</small></a>
         </div>
     </div>
 </form>

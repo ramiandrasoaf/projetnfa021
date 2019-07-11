@@ -2,3 +2,7 @@
     position: absolute;
     bottom: 0;
 }
+
+.w-17 {
+    width: 17% !important;
+}
