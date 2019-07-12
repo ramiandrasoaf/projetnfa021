@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 // Inclus des fichiers de dépendances.
 include_once 'inc/db_connection_inc.php';
@@ -71,36 +71,28 @@ if (!isset($email)) {
 }
 // --Fin validation
 
-print_r("before");
-
 if (!$erreurExists) {
 
-    //  Avant l'insertion vérifions s'il existe déjà des enregistrements liés aux clé unique
-    //  $nbEmailQuery = "SELECT COUNT(id_utilisateur) as count FROM `utilisateurs` WHERE `email` = '$email'";
-    //  $nbPseudoQuery= "SELECT COUNT(id_utilisateur) as count FROM `utilisateurs` WHERE `pseudo`= '$pseudo'";
-
-    // $nbEmailResult = mysqli_query($con, $nbEmailQuery) or die(mysqli_error($con));
-
-
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
-    print_r("ok");
 
     // Préparation de la requête sql pour l'enregistrement des données
     $query = "INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `password`, `phone`, `pseudo`) VALUES ('$nom', '$prenom', '$email', '$password_hash', '$phone', '$pseudo')";
 
     $result = mysqli_query($con, $query) or die(mysqli_error($con));
 
-
     if ($result) {
-
         // Mettre le type de contenue de la reponse a json
         header('Content-Type: application/json');
 
+        $_SESSION["user_token"] = bin2hex(random_bytes(78));
+
         // Encoder la reponse sous forme json
         echo json_encode(array("success" => array("code" => 200, "value" => "L'utilisateur $pseudo a bien été créé avec success")), JSON_UNESCAPED_UNICODE);
+    } else {
+        unset($_SESSION["user_token"]);
     }
 
 } else {
-    print_r("error");
+    unset($_SESSION["user_token"]);
     echo json_encode(array("error" => array("code" => 500, "value" => $erreurs)), JSON_UNESCAPED_UNICODE);
 }

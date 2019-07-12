@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +10,7 @@
 
 <?php include_once "inc/header_inc.php"; ?>
 
-<form id="inscriptionForm" class="text-center border border-light p-5" method="post" enctype="multipart/form-data"
+<form id="inscriptionForm" class="text-center p-5" method="post" enctype="multipart/form-data"
       action="inscription_action.php">
     <div class="card w-25 mx-auto">
         <div class="card-body ">
@@ -45,7 +47,6 @@
         </div>
 
     </div>
-
 
 
 </form>

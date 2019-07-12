@@ -6,11 +6,13 @@
 
 $(function () {
 
-    const effacerErreur = () => {
+    const effaceAlert = () => {
         $('#instr_nom_error').text("");
         $('#instr_nom_error').removeClass("text-danger");
         $('#instr_type_error').text("");
         $('#instr_type_error').removeClass("text-danger");
+        $('#message').removeClass("alert alert-danger");
+        $('#message').removeClass("alert alert-success");
     }
 
     const afficherInstrumentObligatoire = () => {
@@ -32,7 +34,16 @@ $(function () {
          *  Cette fonction est appelée dans le cas où le serveur repond avec succès.
          */
         const success = (reponse) => {
-            console.log(reponse);
+            $('#message').removeClass("alert alert-danger");
+            $('#message').removeClass("alert alert-success");
+
+            if (reponse.error) {
+                $("#message").text(reponse.error.value);
+                $('#message').addClass("alert alert-danger");
+            } else {
+                $("#message").text(reponse.success.value);
+                $('#message').addClass("alert alert-success");
+            }
         };
 
         /**
@@ -50,25 +61,23 @@ $(function () {
 
 
     // Appeler lors d'un clique sur le bouton Ajouter.
-    $("#submitInstrument").submit(function (event) {
-        //event.preventDefault();
+    $("#addInstrumentForm").submit(function (event) {
+        event.preventDefault();
 
         let instrument = $('#instrumentInput').val();
         let instrumentType =  $('input[name=instr_type_radio]:checked').val();
         let instrumentApropos =  $('#aproposTextArea').val();
         let erreurExiste = false;
 
-        effacerErreur();
+        effaceAlert();
 
         //  Validation des données
         if(!instrument) {
-
             // Envoie le message d'erreur à l'ecran
             afficherInstrumentObligatoire();
 
             // Empêche le renvoie des données postées depuis l'ecran
             event.preventDefault();
-
             erreurExiste = true;
         }
 
@@ -93,6 +102,7 @@ $(function () {
             }
 
             ajouterInstrument(donnee);
+            this.reset();
         }
 
     });
@@ -104,10 +114,10 @@ $(function () {
     const success = (array) => {
         $("#instr_type_content").empty();
 
-        array.forEach(el => {
+        array.forEach((el, index, arr) => {
             let dom = '<div class="form-check">' +
-                '           <input class="form-check-input" id="instr_cord" name="instr_type_radio" type="radio" value="' + el.id_instr_type + '">' +
-                '           <label class="form-check-label" for="instr_cord">' + el.libelle + '</label>' +
+                '           <input class="form-check-input" id="instr_cord' + index + '" name="instr_type_radio" type="radio" value="' + el.id_instr_type + '">' +
+                '           <label class="form-check-label" for="instr_cord' + index + '">' + el.libelle + '</label>' +
                 '      </div>';
 
             $("#instr_type_content").append(dom);
@@ -115,14 +125,12 @@ $(function () {
     }
 
     const fail = (status, erreur) => {
-
     }
 
     let chargerInstrumentType = () => {
-
         $.get("charger_instrument_type_action.php", success, "json").fail(fail);
     }
 
-    // chargerInstrumentType();
+    chargerInstrumentType();
 
 });

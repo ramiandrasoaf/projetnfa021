@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Inclus des fichiers de dépendances.
 include_once 'inc/db_connection_inc.php';
@@ -8,7 +9,7 @@ include_once 'inc/db_connection_inc.php';
 $instrumentTypes = [];
 
 // Preparation de la requête
-$query = "SELECT id_instr_type, code, libelle FROM `types_instrument` WHERE password=password_hash()";
+$query = "SELECT id_instr_type, code, libelle FROM `types_instrument`";
 
 $result = mysqli_query($con, $query) or die(mysqli_error($con));
 

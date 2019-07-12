@@ -1,0 +1,11 @@
+body {
+    background-image: url("../img/piano.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-navbar-dark-light {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    height: 82px;
+    color: #fff !important;
+}

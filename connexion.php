@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +13,7 @@
 
 <?php include_once "inc/header_inc.php"; ?>
 
-<form id="form_connexion" class="text-center p-5" method="post" enctype="multipart/form-data" target="_self"
+<form id="form_connexion" class="text-center p-5" method="post" enctype="multipart/form-data"
       action="connexion_action.php">
     <div class="card w-17 mx-auto">
         <div class="card-body ">
@@ -31,7 +36,7 @@
             </div>
         </div>
         <div class="mb-2">
-            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <button id="connexionbtn" type="submit" class="btn btn-primary">Se connecter</button>
         </div>
         <div class="mb-2">
             <a href="inscription.php">

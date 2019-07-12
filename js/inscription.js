@@ -65,6 +65,7 @@ $(function () {
     $("#inscriptionForm").submit(function(event){
         event.preventDefault();
         creerInscription();
+        this.reset();
     });
 
 });
